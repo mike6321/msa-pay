@@ -1,3 +1,7 @@
+plugins {
+    id 'com.palantir.docker' version '0.25.0'
+}
+
 group = 'com.example.membership'
 version = '0.0.1-SNAPSHOT'
 
@@ -10,4 +14,19 @@ dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
     implementation project(path: ':common')
     runtimeOnly 'com.h2database:h2'
+}
+
+docker {
+    print(tasks.bootJar.outputs.files)
+    // 이미지 이름
+    name rootProject.name+'-'+project.name + ":" + version
+
+    // 도커파일
+    dockerfile file('./Dockerfile')
+
+    // 어떤 파일들을 Dockerfile 에 복사할 것인가
+    files tasks.bootJar.outputs.files
+
+    // Dockerfile 에 전달할 인자
+    buildArgs(['JAR_FILE':tasks.bootJar.outputs.files.singleFile.name])
 }

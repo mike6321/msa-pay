@@ -49,3 +49,11 @@ hs_err_pid*
 
 .idea
 .gradle
+
+/*/build/
+axon-server-se/*/*
+db/data/*
+
+demo-pay/membership-service/build/
+
+demo-pay/common/build/tmp/jar/MANIFEST.MF
