@@ -2,7 +2,7 @@ plugins {
     id 'com.palantir.docker' version '0.25.0'
 }
 
-group = 'com.example.membership'
+group = 'com.example.banking'
 version = '0.0.2-SNAPSHOT'
 
 dependencies {
