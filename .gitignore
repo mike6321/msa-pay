@@ -58,3 +58,7 @@ demo-pay/membership-service/build/
 demo-pay/common/build/
 demo-pay/build/
 .DS_Store
+
+demo-pay/banking-service/build/tmp/bootJar/
+
+demo-pay/banking-service/build/

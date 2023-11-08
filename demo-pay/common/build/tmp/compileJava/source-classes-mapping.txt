@@ -1,8 +1,0 @@
-com/example/common/PersistenceAdapter.java
- com.example.common.PersistenceAdapter
-com/example/common/WebAdapter.java
- com.example.common.WebAdapter
-com/example/common/SelfValidating.java
- com.example.common.SelfValidating
-com/example/common/UseCase.java
- com.example.common.UseCase

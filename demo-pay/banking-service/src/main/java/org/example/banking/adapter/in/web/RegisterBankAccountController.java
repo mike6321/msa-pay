@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
+import static java.util.Objects.*;
+
 @WebAdapter
 @RequestMapping("/membership")
 @RestController
@@ -28,7 +32,12 @@ public class RegisterBankAccountController {
                 .linkedStatusIsValid(request.isLinkedStatusIsValid())
                 .build();
 
-        return ResponseEntity.ok(registerBankAccountUseCase.registerBankAccount(command));
+        RegisteredBankAccount registeredBankAccount = registerBankAccountUseCase.registerBankAccount(command);
+        if (isNull(registeredBankAccount)) {
+            // TODO: 2023/10/24 Error Handling
+            return null;
+        }
+        return ResponseEntity.ok(registeredBankAccount);
     }
 
 }
