@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import static java.util.Objects.*;
 
 @WebAdapter
-@RequestMapping("/membership")
+@RequestMapping("/banking")
 @RestController
 @RequiredArgsConstructor
 public class RegisterBankAccountController {
 
     private final RegisterBankAccountUseCase registerBankAccountUseCase;
 
-    @PostMapping("/register")
+    @PostMapping("/account/register")
     public ResponseEntity<RegisteredBankAccount> registerBankAccount(@RequestBody RegisterBankAccountRequest request) {
         RegisterBankAccountCommand command = RegisterBankAccountCommand.builder()
                 .membershipId(request.getMembershipId())
